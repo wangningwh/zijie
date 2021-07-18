@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"overwidth=320px>
+    <title>Document</title>
+    <script src="echarts.min.js"></script>
+    <style>
+        @media only screen and (min-width: 320px){    
+html {        
+font-size: 10px;
+   }
+}
+html{
+touch-action:none;
+
+touch-action:pan-y;
+
+}
+        .first{
+            
+            display: flex;
+            width: 100%;
+            height: 30rem;
+            border: .1rem solid rgb(226, 223, 223);
+            justify-content: space-around;
+            align-items:center;
+            flex-wrap:wrap;
+            background: url(./xiaotubiao/背景.png)no-repeat center 0rem;
+            background-size: 100% 85%;
+            position: absolute;
+            left: 0rem;
+        }
+        .first-didian{
+            display: flex;
+            width: 50%;
+            height: 1.5rem;
+            background-color: transparent;
+            position: absolute;
+            top: 1rem;
+            left: 14rem;
+            font-size: 2rem;
+            color: white;
+            align-items:right;
+        }
+        .first-air{
+            display: flex;
+            width: 3.6rem;
+            height: 4rem;
+            position: absolute;
+            border-radius: 10px;
+            top: 6rem;
+            left: 1rem;
+            font-size: 1rem;
+            color: white;
+            align-items: center;
+            text-align: center;
+        }
+        .first-air-dushu{
+            display: flex;
+            width: 2rem;
+            height: 4rem;
+            position: absolute;
+            border-radius: 10px;
+            top: 0rem;
+            left: 0.7rem;
+            font-size: 1rem;
+            color: white;
+            align-items: center;
+            text-align: center;
+        }
+        .first-wendu{
+            display: flex;
+            width: 6rem;
+            height: 6rem;
+            position: absolute;
+            top: 12rem;
+            left: 12rem;
+            font-size: 6rem;
+            color: white;
+            align-items: center;
+            background-color: transparent;
+        }
+        .first-tianqi {
+            display: flex;
+            width: 6rem;
+            height: 6rem;
+            position: absolute;
+            top: 18rem;
+            left: 14rem;
+            font-size: 2rem;
+            color: white;
+            align-items: center;
+            background-color: transparent;
+        }
+        .first-feng{
+            display: flex;
+            width: 6rem;
+            height: 3rem;
+            position: absolute;
+            top: 22rem;
+            left: 12.7rem;
+            font-size: 1rem;
+            color: white;
+            align-items: center;
+            background-color: transparent;
+        }
+        .first-child{
+            display: flex;
+            width: 100%;
+            height: 8.1rem;
+            border: 0;
+            flex-wrap:wrap;
+            background: white;
+            position: absolute;
+            top: 30rem;
+}
+        .child-jin{
+            display: flex;
+            width: 10rem;
+            left: 2rem;
+            height: 8.1rem;
+            border: 0;
+            flex-wrap:wrap;
+            background: white;
+            position: absolute;
+            align-items: center;
+            color: black;
+            font-size: 1.4rem;
+            top: 0rem;
+        }
+        .child-jinwen{
+            display: flex;
+            width: 4rem;
+            left: 10rem;
+            height: 8.1rem;
+            border: 0;
+            flex-wrap:wrap;
+            background: white;
+            position: absolute;
+            align-items: center;
+            color: black;
+            font-size: 1.4rem;
+            top: 0rem;
+            background-size: 1rem;
+        }
+        .child-fenge{
+            display: flex;
+            width: .15rem;
+            left: 15.5rem;
+            height: 8.1rem;
+            background: rgb(160, 158, 158);
+            position: absolute;
+            align-items: center;
+        }
+        .child-ming{
+            display: flex;
+            width: 10rem;
+            left: 16rem;
+            height: 8.1rem;
+            border: 0;
+            flex-wrap:wrap;
+            background: white;
+            position: absolute;
+            align-items: center;
+            color: black;
+            font-size: 1.4rem;
+            top: 0rem;
+        }
+        .child-mingwen{
+            display: flex;
+            width: 4rem;
+            left: 26.2rem;
+            height: 8.1rem;
+            border: 0;
+            flex-wrap:wrap;
+            background: white;
+            position: absolute;
+            align-items: center;
+            color: black;
+            font-size: 1.4rem;
+            top: 0rem;
+            background-size: 1rem;
+        }
+        
+        body {
+	width: 100%;
+	overflow-x: hidden;
+}
+
+li {
+	list-style: none;
+}
+
+#nav {
+	width: 100%;
+	height: 10rem;
+	overflow-x: scroll;
+    top: 56rem;
+	position: relative;
+    background-color: white;
+}
+#nav:before{
+	content: '';
+	position: absolute;
+	display: inline-block;
+	width: 10rem;
+	height: -1rem;
+	background: white;
+	left: 0;
+	bottom: 0;
+	z-index: 20;
+    flex-wrap: wrap;
+    
+}
+.list {
+	width: 124rem;
+	box-sizing: border-box;
+	
+}
+
+.item {
+	float: left;
+    left: 1.5rem;
+	width: 4rem;
+	height: 9rem;
+	font-size: 1rem;
+	line-height: 2rem;
+	margin-right: 1rem;
+	text-align: center;
+    border: black;
+    position: relative;
+    background-color: white;
+
+}
+body {
+	width: 100%;
+    height: 200%;
+	overflow-x: hidden;
+}
+
+li {
+	list-style: none;
+}
+
+#nav-1 {
+	width: 100%;
+	height: 32rem;
+	overflow-x: scroll;
+    top: 56rem;
+	position: relative;
+    background-color: white;
+}
+#nav-1:before{
+	content: '';
+	position: absolute;
+	display: inline-block;
+	width: 10rem;
+	height: -1rem;
+	background: white;
+	left: 0;
+	bottom: 0;
+	z-index: 20;
+    flex-wrap: wrap;
+    
+}
+.list-1 {
+	width: 40rem;
+	box-sizing: border-box;
+	
+}
+
+.item-1 {
+	float: left;
+    left: -6rem;
+	width: 4rem;
+	height: 9rem;
+	font-size: .3rem;
+	line-height: 2rem;
+	margin-right: 1rem;
+	text-align: center;
+    border: black;
+    position: absolute;
+    background-color: white;
+
+}
+.quxiantu  {
+    
+	float: left;
+    left: -1rem;
+	width: 36rem;
+	height: 9rem;
+	font-size: 1rem;
+	line-height: 2rem;
+	margin-right: 1rem;
+	text-align: center;
+    border: black;
+    position: relative;
+    background-color: white;
+
+}
+.jd_banner{
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+        top: 54rem;
+	}
+	.jd_banner ul:first-child{
+		width: 1000%;
+		height: 200px;
+		transform: translateX(-10%);
+		--webkit-transform:translateX(-10%) ;
+        display: flex;
+        flex-wrap: wrap;
+	}
+	.jd_banner ul:first-child li{
+		width: 10%;
+		float: left;
+	}
+	.jd_banner ul:first-child li a{
+		width: 100%;
+	}
+	.jd_banner ul:first-child li img{
+		width: 100%;
+		height: 100px;
+	}
+	.jd_banner ul:last-child{
+        display: flex;
+        flex-wrap: wrap;
+		position: absolute;
+		left:50%;
+		margin-left: -10px;
+		bottom: 20px;
+		height: 6px;
+		width: 118px;
+	}
+	.jd_banner ul:last-child li{
+		border: 1px solid #DDDDDD;
+		border-radius: 25%;
+		float: left;
+		margin-left: 10px;
+		width: 15px;
+		height: 6px;
+	}
+	.jd_banner ul:last-child li:first-child{
+		margin-left: -10px;
+	}
+	.jd_banner ul:last-child li.lunbo_now{
+		background: whitesmoke;
+	}
+    </style>
+    <style type="text/css">
+        *,
+        *::before ,
+        *::after{
+            /* 所有的标签和伪元素都被选中 */
+            margin: 0;
+            padding: 0;
+            /* 移动端常用布局时使用非固定像素的，规定盒子的宽度从边框开始算，-webkit移动主要浏览器内核 */
+            box-sizing: border-box;
+            --webkit-box-sizing:border-border-box ;
+            /* 去除点击高亮效果 */
+            tap-highlight-color:transparent ;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body{
+            font-size: 1px;
+            /*  sans-serif 设置手机端默认字体*/
+            font-family: "microsoft yahei",sans-serif;
+            /* #333就是#333333，如果六位都是同一个数值,代表灰色，接近黑色 */
+            color: #333;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        .usebox{
+            float: left;
+    left: 1rem;
+	width: 7rem;
+	height: 10rem;
+	margin-right: 1rem;
+    font-size: 3rem;
+    border: .1rem solid darkgray;
+    position: relative;
+    background-color: white;
+    
+    }
+    .usebox image{
+        width: 3rem;
+        height: 2rem;
+    }
+    </style>
+</head>
+
+<body>
+    
+    <div class=first id="first">
+        <div class="first-didian" id="sousuo"><p style="color: black;font-size: 20px;">搜索</p>搜索</div>
+        <div class="first-air"><div class="first-air-dushu" id="yuankuang"></div></div>
+        <div class="first-wendu"></div>
+        <div class="first-tianqi"></div>
+        <div class="first-feng"></div>
+        <div class="first-child">
+            <div class="child-jin"></div>
+            <div class="child-jinwen"></div>
+            <div class="child-fenge"></div>
+            <div class="child-ming"></div>
+            <div class="child-mingwen"></div>
+        </div>
+    </div>
+    <!-- <div class=wrapbox1 ID="first"></div> -->
+    <div id="nav">	
+        <ul class="list" id="li_one">
+            <li class="item">菜单1</li>
+            <li class="item">菜单2</li>
+            <li class="item">菜单3</li>
+            <li class="item">菜单4</li>
+            <li class="item">菜单5</li>
+            <li class="item">菜单6</li>
+            <li class="item">菜单7</li>
+            <li class="item">菜单8</li>
+            <li class="item">菜单1</li>
+            <li class="item">菜单2</li>
+            <li class="item">菜单3</li>
+            <li class="item">菜单4</li>
+            <li class="item">菜单5</li>
+            <li class="item">菜单6</li>
+            <li class="item">菜单7</li>
+            <li class="item">菜单8</li>
+            <li class="item">菜单1</li>
+            <li class="item">菜单2</li>
+            <li class="item">菜单3</li>
+            <li class="item">菜单4</li>
+            <li class="item">菜单5</li>
+            <li class="item">菜单6</li>
+            <li class="item">菜单7</li>
+            <li class="item">菜单8</li>
+        </ul>
+    </div>
+    <div id="nav-1">	
+        <ul class="list-1" id="li_two">
+            <li class="item">昨天</li>
+            <li class="item">今天</li>
+            <li class="item">明天</li>
+            <li class="item">周日</li>
+            <li class="item">周一</li>
+            <li class="item">周二</li>
+            <li class="item">周三</li>
+        </ul>
+        <div class="quxiantu" id="quxiantu"></div>
+        <ul class="list-1" id="li_three">
+            <li class="item">菜单1</li>
+            <li class="item">菜单2</li>
+            <li class="item">菜单3</li>
+            <li class="item">菜单4</li>
+            <li class="item">菜单5</li>
+            <li class="item">菜单6</li>
+            <li class="item">菜单7</li>
+        </ul>
+    </div>
+    <div class="jd_container">
+        <div class="jd_banner" id="huakuang">
+            <ul id="1">
+                <li>
+                <div class="usebox"></div>
+                <div class="usebox"></div>
+                <div class="usebox"></div>
+                <div class="usebox"></div>
+                
+                </li>
+                <li><div class="usebox"></div>
+                    <div class="usebox"></div>
+                    <div class="usebox"></div>
+                    <div class="usebox"></div>
+                    </li>
+            </ul>
+            <ul id="2">
+                <li><a href=""></a></li>
+                <li class="lunbo_now"><a href=""></a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let first=document.getElementById("first");
+        let second=document.getElementById("li_one");
+            let third_two=document.getElementById("li_two");
+            let third_three=document.getElementById("li_three");
+            let fourth_one=document.getElementById("1");
+            let fourth_two=document.getElementById("2");
+            for(let i=0;i<4;i++){
+                fourth_one.children[0].children[i].innerHTML="<img src='xiaotubiao\\"+(1+i)+".png' width='30rem'height='30rem'>";
+                fourth_one.children[1].children[i].innerHTML="<img src='xiaotubiao\\"+(11+i)+".png' width='30rem'height='30rem'>";
+                        }
+            
+    </script>
+    <script>
+        let banner = function(){
+            let index = 1;
+            let banner=document.getElementById("huakuang")
+            let width = banner.offsetWidth;
+            let imgBox = document.getElementById("1");
+            let pointBox = document.getElementById("2");
+            let points = pointBox.querySelectorAll("li");
+                //加过渡
+                function addTransition(){
+                    imgBox.style.transition = 'all 0.2s';
+                    //css3属性一般都要做兼容设置
+                    imgBox.style.webkitTransition = 'all 0.2s';
+                }
+                //清过渡
+                function clearTransition(){
+                    imgBox.style.transition = 'none';
+                    imgBox.style.webkitTransition = 'none';
+                }
+                //做位移
+                function addTransform(distance){
+                    imgBox.style.transform = 'translateX(' + distance + 'px)';
+                    imgBox.style.webkitTransform = 'translateX(' + distance + 'px)';
+                }
+                
+                //通过监听事件,判断移动的位置,做到移动到最后一张是瞬间定位到第一张
+                imgBox.addEventListener("transitionend",function(){
+                    if(index >=2){
+                        index = 1;
+                        //清过渡
+                        clearTransition();
+                        //做位移
+                        addTransform(-index*width);
+                    }else if(index < 0){
+                        index = 0;
+                        //清过渡
+                        clearTransition();
+                        //做位移
+                        addTransform(-index*width);
+                    }
+                    // 设置点的样式变化
+                    setPoint();
+                });
+                function setPoint(){
+                    // 遍历每个点
+                    for (var i = 0; i < points.length; i++) {
+                        points[i].classList.remove("lunbo_now");
+                    }
+                    points[index].classList.add("lunbo_now");
+                }
+                // 添加手滑动图片事件
+                let startX = 0;
+                let distanceX = 0;
+                let is_move = false;
+                imgBox.addEventListener("touchstart",function(e){
+                    startX = e.touches[0].clientX;
+                });
+                imgBox.addEventListener("touchmove",function(e){
+                    let moveX = e.touches[0].clientX;
+                    distanceX = moveX - startX;
+                    clearTransition();
+                    addTransform(-index*width + distanceX);
+                    is_move = true;
+                });
+                imgBox.addEventListener("touchend",function(){
+                    if(is_move){
+                        // 当手指滑动的距离小于图片的1/3，吸附
+                        if(Math.abs(distanceX) < width/3){
+                            addTransition();
+                            addTransform(-index*width)
+                        }else{
+                            if(distanceX >0){
+                                index --;
+                            }else{
+                                index ++;
+                            }
+                            addTransition();
+                            addTransform(-index*width)
+                        }
+                    }
+                    startX = 0;
+                    distanceX = 0;
+                    is_move = false;
+                });
+        }
+        banner();
+        
+    </script>
+    <script type="text/javascript">
+    var mychart = echarts.init(document.getElementById("quxiantu"));
+    var option = {
+    xAxis: {
+        show: false,
+        type: 'category',
+        boundaryGap:false
+    },
+    yAxis: {
+        show: false,
+        type: 'value'
+    },
+    grid: {
+        left: '4%',
+        right:'4%',
+        bottom:'0%',
+        top:'20%',
+        containLabel:true,
+
+    },
+    series: [
+        
+    {
+        label:{
+            show:true,
+            position: 'top'
+
+        },
+        symbol:'circle',
+        color:['orange'],
+        symbolSize:7,
+        data: [27, 22, 26, 31, 31, 27, 27],
+        type: 'line',
+        smooth: true
+    },
+    {
+        label:{
+            show:true,
+            position: 'bottom'
+
+        },
+        symbol:'circle',
+        color:['skyblue'],
+        symbolSize:7,
+        data: [18,14,12,14,17,16,15],
+        type: 'line',
+        smooth: true
+    },
+    ]
+};
+mychart.setOption(option);
+
+    </script>
+</body>
+
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"overwidth=320px>
+    <title>Document</title>
+    <style>
+        @media only screen and (min-width: 320px){    
+html {        
+font-size: 10px;
+   }
+}
+html{
+touch-action:none;
+
+touch-action:pan-y;
+
+}
+        .wrapbox{
+            display: none;
+            width: 100%;
+            height: 30rem;
+            justify-content: space-around;
+            flex-wrap:wrap;
+            
+        }
+        .search{
+            display: flex;
+            width: 100%;
+            height: 5rem;
+            align-items:center;
+            border: 0;
+            outline-style: none;
+            background-color: white;
+            position: relative;
+        }
+       
+    .inputkuang{
+        position: absolute;
+    height: 3.5rem;
+    width: 24rem;
+    padding: 0 29px 0 10px;
+    line-height: 30px;
+    color: #222;
+    font-size: 12px;
+    border: 0px;
+    outline-style: none;
+    border-radius: 15px;
+    box-shadow: none;
+    box-sizing: border-box;
+    background-color: rgb(240, 240, 240);
+    left: 1rem;
+    }
+    .inputkuang input{
+        position: absolute;
+    height: 3.5rem;
+    width: 24rem;
+    padding: 0 29px 0 10px;
+    line-height: 30px;
+    color: #222;
+    font-size: 12px;
+    border: 0px;
+    outline-style: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    background-color:transparent;
+    left: 3rem;
+    }
+        .quxiao{
+            position: absolute;
+            display: flex;
+            width: 4rem;
+            height: 5rem;
+            align-items:center;
+            /* border: 0;
+            outline-style: none; */
+            background-color: white;
+            right: 0;
+        }    
+        .fenge{
+            display: flex;
+            width: 100%;
+            height: .15rem;
+            border: 0;
+            outline-style: none;
+            background-color: rgb(214, 209, 209);
+            margin-top: -12.5rem;
+        }
+        .lishi{
+            display: flex;
+            width: 90%;
+            align-items:center;
+            border: 0;
+            outline-style: none;
+            background-color: white;
+            position: absolute;
+            flex-wrap: wrap;
+            margin-top: 6rem;
+
+        }
+        .list1{
+            display: flex;
+            top: -25px;
+            width: 100%;
+            height: 2.7rem;
+            align-items:center;
+            border: 0;
+            outline-style: none;
+            background-color: white;
+            position: relative;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .lajitong{
+            display: flex;
+            width: 3rem;
+            height: 3.5rem;
+            border: 0;
+            outline-style: none;
+            position: absolute;
+            right: 0px;
+        }
+        .geti{
+            align-items:center;
+            position: relative;
+            left: 0px;
+    height: 2.9rem;
+    width: 8.5rem;
+    padding: 0 29px 0 10px;
+    line-height: 30px;
+    color: #222;
+    font-size: 15px;
+    border: 0px;
+    outline-style: none;
+    border-radius: 18px;
+    box-shadow: none;
+    box-sizing: border-box;
+    background-color: rgb(240, 240, 240);
+    margin-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapbox" id="sousuolan">
+       <div class="search">
+           <div class="inputkuang" ><img src="xiaotubiao\fangdajing.png"><input type="text" value="搜索地址" id="inputd"></div>
+           <div class="quxiao" id="quxiao"><b color="rgb(214, 209, 209)" font-size="1px">取消</b></div>
+       </div>
+       <div class="fenge"></div>
+       <div class="lishi">
+           <div class="list1"><h2>当前定位</h2></div>
+           <div class="list1"><div class="geti"></div></div>
+           <div class="list1"><h2>历史记录</h2><div class="lajitong"><img src="xiaotubiao\lajitong.png" left=0px></div></div>
+           <div class="list1"><div class="geti"></div><div class="geti"></div><div class="geti"></div></div>
+           <div class="list1"><h2>热门城市</h2></div>
+           <div class="list1"><div class="geti"></div><div class="geti"></div><div class="geti"></div></div>
+           <div class="list1"><div class="geti"></div><div class="geti"></div><div class="geti"></div></div>
+           <div class="list1"><div class="geti"></div><div class="geti"></div><div class="geti"></div></div>
+           <div class="list1"><div class="geti"></div><div class="geti"></div><div class="geti"></div></div>
+       </div>
+    </div>
+    <!-- <div class=wrapbox1 ID="first"></div> -->
+    <script>
+        let quxiao=document.getElementById("quxiao");
+        let didian=document.getElementById("sousuo");
+        let sousuolan=document.getElementById("sousuolan");
+        let inputd=document.getElementById("inputd");
+        didian.onclick=function(){
+            didian.parentNode.parentNode.children[0].style.display="none";
+            didian.parentNode.parentNode.children[1].style.display="none";
+            didian.parentNode.parentNode.children[2].style.display="none";
+            didian.parentNode.parentNode.children[3].style.display="none";
+            sousuolan.style.display="flex";
+            const xhr1=new XMLHttpRequest();
+            xhr1.open("GET",'https://geoapi.qweather.com/v2/city/top?number=5&range=cn&key=102be9870dbb4fde948da6a571a02459')
+            xhr1.send();
+            // xhr1.responseType='json';
+            xhr1.onreadystatechange=function(){
+                if(xhr1.readyState===4){
+                    if(xhr1.status>=200&&xhr1.status<300){
+                        let x=JSON.parse(xhr1.response);
+                        
+                        console.log(x);
+                        
+                    }
+                }
+            }
+        }
+        quxiao.onclick=function(){
+            sousuolan.style.display="none";
+            didian.parentNode.parentNode.children[0].style.display="flex";
+            didian.parentNode.parentNode.children[1].style.display="";
+            didian.parentNode.parentNode.children[2].style.display="";
+            didian.parentNode.parentNode.children[3].style.display="";
+            
+        }
+        
+    </script>
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tankuang1 {
+            display: none;
+}
+.skyimg {
+  float: left;
+  position: absolute;
+  top: 0.46875rem;
+  right: 0.46875rem;
+}
+.beijingt1 {
+  position: relative;
+  display: flex;
+  height: 100px;
+  width: 100px;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.43);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.beijingt1::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: inherit;
+  filter: blur(10px);
+  z-index: 1;
+}
+.tuijieshao1 {
+  background-color: #ffffff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto auto;
+  height: 15rem;
+  width: 9.8125rem;
+  opacity: 1;
+  border-radius: 8px;
+  transition: height 3s;
+}
+.tuijieshao1 .skyzhishu {
+  padding-top: 1.5625rem;
+  background: url(img/images/tanchuang.png) no-repeat bottom #80d2e5;
+  background-size: 100% 20%;
+  text-align: center;
+  font-size: 0.625rem;
+  height: 7.25rem;
+  color: #ffffff;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.tuijieshao1 .skyzhishu .kqzs {
+  font-size: 0.4375rem;
+  line-height: 1;
+}
+.tuijieshao1 .skyzhishu .aqis {
+  font-size: 1.875rem;
+  line-height: 1;
+  margin: 0.46875rem 0 0.625rem 0;
+}
+.tuijieshao1 .skyzhishu .liang {
+  display: inline-block;
+  top: 0rem;
+  position: relative;
+  font-size: 0.5rem;
+  background-color: #f0cc35;
+  padding: 0 0.4375rem;
+  line-height: -1rem;
+  border-radius: 0.1875rem;
+}
+.tuijieshao1 td {
+  border: 1px solid #e4e4e4;
+  border-left-style: none;
+  border-bottom-style: none;
+  line-height: 0.5625rem;
+  text-align: center;
+  width: 33.33%;
+  display: table-cell;
+  vertical-align: inherit;
+  height: -2rem;
+}
+.tuijieshao1 td .val {
+  color: #434343;
+  font-size: 0.4375rem;
+  line-height: 1;
+  margin: 0.503125rem 0 0.15625rem;
+}
+.tuijieshao1 td .titl {
+  color: #b2b2b2;
+  font-size: 0.375rem;
+  line-height: 1;
+  margin: 0 0 0.453125rem;
+  height: 50%;
+}
+.tuijieshao1 table {
+  border-spacing: 0;
+  border-style: none;
+  height: 10%;
+}
+.tuijieshao1 .skyzhishu1 {
+  width: 80%;
+height: 10%;
+}
+
+    </style>
+</head>
+<body>
+    <div class="tankuang1" id="tankuangi">
+        <div class="beijingt1"></div>
+        <div class="tuijieshao1">
+            <img  id="shanchu"class="skyimg" src="xiaotubiao\lajitong.png" alt="删除" width="20rem" height="20rem">
+            <div class="skyzhishu">
+                <p class="kqzs">空气质量指数</p>
+                <p class="aqis">74</p>
+                <p class="liang">良</p>
+            </div>
+            <table class="skyzhishu1" >
+                <tr >
+                    <td>
+                        <p class="val">54</p>
+                        <p class="titl">PM2.5</p>
+                    </td>
+                    <td>
+                        <p class="val">54</p>
+                        <p class="titl">PM10</p>
+                     
+                    </td>
+                    <td>
+                        <p class="val">54</p>
+                        <p class="titl">SO2</p>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="val">54</p>
+                        <p class="titl">NO2</p>
+                    </td>
+                    <td>
+                        <p class="val">54</p>
+                        <p class="titl">O3</p>
+                    </td>
+                    <td class="val2">
+                        <p class="val">54</p>
+                        <p class="titl">CO</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    let yuankuang=document.getElementById("yuankuang");
+    let tankuang=document.getElementById("tankuangi")
+    let shanchu=document.getElementById("shanchu")
+            yuankuang.onclick=function(){
+                console.log("yes");
+                didian.parentNode.parentNode.children[0].style.display="none";
+            didian.parentNode.parentNode.children[1].style.display="none";
+            didian.parentNode.parentNode.children[2].style.display="none";
+            didian.parentNode.parentNode.children[3].style.display="none";
+                tankuang.style.display="flex";
+            }
+            shanchu.onclick=function(){
+                tankuang.style.display="none";
+                didian.parentNode.parentNode.children[0].style.display="flex";
+            didian.parentNode.parentNode.children[1].style.display="";
+            didian.parentNode.parentNode.children[2].style.display="";
+            didian.parentNode.parentNode.children[3].style.display="";
+                
+            }
+</script>
+</body>
+</html>
